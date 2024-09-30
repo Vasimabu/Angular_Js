@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope</title>
+    <script src="angular.min.js"></script>
+    <style>
+        body {
+            background-color: rgb(75, 68, 222);
+            color: aliceblue;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            width: 900px;
+            margin: auto;
+            font-size: 22px;
+        }
+    </style>
+    <script>
+        var app=angular.module('studentinfo',[]);
+        //root scope
+        app.run(function($rootScope){
+            $rootScope.info="Result";
+        });
+        app.controller("student",function($scope){
+            $scope.info="student information";
+            $scope.name="abu";
+            $scope.grade="grade A";
+            $scope.gradeinfo=function(){
+                alert("grade A> 90%");
+            }
+        })
+    </script>
+</head>
+<body ng-app="studentinfo">
+    {{info}}
+    <div ng-controller="student">
+        <h1>{{ info }}</h1>
+        Student name: {{name}}
+        <br>grade:
+        <span ng-bind='grade'></span><br>
+        <input type="text" ng-model="name">
+        <br>
+        <input type="button" value="marksinfo" ng-click='gradeinfo()'>
+    </div>
+</body>
+</html>

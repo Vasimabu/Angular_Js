@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data binding</title>
+    <script src="angular.min.js"></script>
+    <script>
+        var app=angular.module("myApp",[]);
+        //controller
+        app.controller("twoway",function($scope){
+            //model
+            $scope.msg="welcome to learn in my perogam"
+        })
+    </script>
+</head>
+<body>
+    <center>
+        <!--view-->
+        <h1>two way data binding</h1>
+        <div ng-controller="twoway">
+            enter your name<input ng-model="msg">
+            <h3>{{msg}}</h3>
+            <br>
+            <span ng-bind="msg"></span>
+        </div>
+    </center>
+</body>
+</html>

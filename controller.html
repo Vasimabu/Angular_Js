@@ -1,0 +1,88 @@
+
+    <!--<link rel="stylesheet" type="text/css"  href=".assets/css/bootstrap.min.css">-->
+<!DOCTYPE html>
+<html lang="en" ng-app="ngctrlApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>controller</title>
+    <link rel="stylesheet" type="text/css"  href=".assets/css/bootstrap.min.css">
+    <script src="angular.min.js"></script>
+    <style>
+        body {
+            background-color: blueviolet;
+            color: aliceblue;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            width: 800px;
+            margin: 0;
+            font-size: 22px;
+        }
+    </style>
+    <script>
+        var app = angular.module('ngctrlApp', []);
+        
+        app.controller("myController", function($scope) {
+            $scope.msg = "AngularJS Controllers";
+
+            $scope.name = function() {
+                alert("abu");
+            };
+            $scope.mail="welcome"
+            $scope.mailId = function(mail) {
+                alert(mail);
+            };
+        });
+        app.controller("2controller",function($scope){
+            $scope.firstname="vijaya";
+            $scope.surename="syed abuthakir"
+        });
+        app.controller("ngctrl",function($scope){
+            $scope.course="AngularJS";
+            $scope.duration="3 months";
+        })
+        app.controller("Obj",function($scope){
+            $scope.emp={name:'abu',salary:15000}
+        })
+        app.controller("Parent",function($scope){
+            $scope.info="hello";
+        })
+        app.controller("Child",function($scope){
+            $scope.info1="hello Buddies";
+        })
+    </script>
+</head>
+<body>
+    <center>
+        <h1 style="text-align: center;">Controller</h1>
+        <div ng-controller="myController">
+            {{ msg }}
+            <br>
+            <button ng-click="name()">Display name</button>
+            <br><br>
+            Enter Email ID: <input type="text" ng-model="mail"><br>
+            <button ng-click="mailId(mail)">Display mail id</button>
+        </div>
+        <div ng-controller="2controller">
+            firstname: {{ firstname }}<br>
+            surename: {{surename}}
+        </div>
+        <div ng-controller="ngctrl">
+            Course <input type="text" ng-model="course">
+            <br> Duration <input type="text" ng-model="course"><br>
+            Course with Duration: {{ course+ " " +duration}}
+        </div><br>
+        <div ng-controller="Obj">
+            Employee name: {{emp.name}}<br>
+            Employee salary: {{emp.salary}}<br>
+        </div>
+        <div ng-controller="Parent">
+            parent: {{info}}<br>
+            <div ng-controller="Child">
+                Child: {{info1}}<br>
+                parent inside child: {{info}}
+            </div>
+            child inside parent: {{info1}}
+        </div>
+    </center>
+</body>
+</html>

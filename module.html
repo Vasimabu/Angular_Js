@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module</title>
+    <script src="angular.min.js"></script>
+    <style>
+    body {
+        background-color: rgb(75, 68, 222);
+        color: aliceblue;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        width: 900px;
+        margin: auto;
+        font-size: 22px;
+    }
+</style>
+</head>
+<body ng-app="mychannel">
+    <h3>Module</h3>
+    <div ng-controller="myctrl">
+        channel name: {{ cname }}<br>
+        creator: {{ owner }}<br>
+        {{ msg }}
+    </div>
+    <script src="module.js"></script>
+</body>
+</html>

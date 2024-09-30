@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ngctrlApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Angular Directives</title>
+    <script src="angular.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+    <style></style>
+    <script>
+        var ngApp= angular.module('ngctrlApp',[]);
+        ngApp.controller("mycontroller",function($scope){
+            $scope.msg="Angular Js directives"
+        })
+    </script>
+</head>
+<body ng-app>
+    <h2>Agular js Directives</h2>
+    <div>
+        <p>
+            {{ 5+ 15}}<br>
+            {{ welcome }}<br>
+            {{100*43}}
+        </p>
+    </div>
+    <div>
+        Course : <input type="text" ng-model="course"><br>
+        {{ course }}
+    </div>
+    <br>
+    <div ng-init="array=[500,400,510,480]">
+        <ul>
+            <li ng-repeat="z in array">{{ z }}</li>
+        </ul>
+    </div> 
+    <div ng-init="checked=true">
+        new user: <input type="checkbox" ng-model="checked">
+        <br>
+        Name:<input type type="text" ng-if="checked">
+        Read only <input type="text" ng-readonly="checked" value="Myprogrammingline">
+        <br>
+        Disabled: <input type="text" ng-disabled="checked" value="welcome to learn program">
+    </div>
+    <div ng-controller="mycontroller">
+        {{ msg }}
+    </div>
+</body>
+</html>

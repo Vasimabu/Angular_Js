@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>model</title>
+    <link rel="stylesheet" type="text/css"  href="assets/css/bootstrap.min.css">
+    <script src="angular.min.js"></script>
+    <style>
+        body {
+            background-color: rgb(175, 113, 234);
+            color: aliceblue;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            width: 900px;
+            margin: auto;
+            font-size: 22px;
+        }
+    </style>
+</head>
+<body ng-app="form">
+    <div ng-controller="empcontroller">
+        <h1></h1>
+        <center><h3>Employee information</h3></center>
+        <form action="">
+            {{ info }}
+            <br>
+            Employee name <br>
+            <input type="text" placeholder="name" ng-model="emp.name"><br>
+            <br>
+            Employee ID <br>
+            <input type="number" placeholder="id" ng-model="emp.no"><br>
+            <br>
+            Emplyoee Designation <br>
+            <input type="text" placeholder="Designation" ng-model="emp.degig"><br>
+            <br>
+            Employee information
+            <input type="submit" value="submit" ng-click="empData(emp)"><br>
+        </form>
+        </center>
+    </div>
+    <script>
+        var app=angular.module("form",[]);
+        app.controller("empcontroller",function($scope){
+            //model
+            $scope.info="Its about employee data";
+            $scope.empData=function(data){
+                console.log(data);};
+        })
+    </script>
+</body>
+</html>

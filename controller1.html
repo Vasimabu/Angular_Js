@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--<link rel="stylesheet" type="text/css"  href=".assets/css/bootstrap.min.css">-->
+    <script src="angular.min.js"></script>
+    <script src="resultController.js"></script>
+    <style>
+        body {
+            background-color:lightcoral;
+            color: aliceblue;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            width: 800px;
+            margin: 0;
+            font-size: 22px;
+        }
+    </style>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="resultctrl">
+        <h3>external controller</h3>
+        <ol>
+            <li ng-repeat="x in result">
+                {{ x.name+" - "+x.grade }}
+                Final per: {{ final_per }}
+            </li>
+        </ol>
+    </div>
+</body>
+</html>

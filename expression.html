@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expression</title>
+    <script src="angular.min.js"></script>
+</head>
+<body ng-app>
+    <div>
+        <p>{{10+20}}<br>
+            {{true + false}}<br>
+            {{ 100 * 200}}
+        </p>
+    </div>
+    <!--ng-init method-->
+    <div ng-init="s=25">
+        Area of square whose side is 25 ={{ s*s }}<br>
+        <span ng-bind="s*s"></span>
+    </div>
+    <div ng-init="r=10;pi=3.14">
+        area of a circle  r is 10={{ 2*pi*r*r }}
+    </div>
+    <div ng-init="firstname='abu';surename='syed'">
+        {{firstname}}
+        {{surename}}
+    </div>
+    <div ng-init="arr=[500,510,520]">
+        {{ arr }}<br>
+        {{arr[2]}}
+    </div>
+    <div ng-init="emp={name:'abu',id:200,age:21}">
+        {{emp.name}}<br>
+        {{emp.id}}<br>
+        {{emp.age}}
+    </div>
+</body>
+</html>
+
+
+
+

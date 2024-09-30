@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="custApp">
+<!--ng-app will be use the model creation its contain to start the angular js in the appplication-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="angular.min.js"></script>
+    <script type="text/javascript">
+        var app= angular.module("custApp",[]);
+        //creation controller
+        app.controller('myCustomer',function($scope){
+            //model
+            $scope.customer={
+                name:"abu",
+                age:21,
+                job:"Software professional"
+            }
+        });
+    </script>
+</head>
+<body>
+    <h1>MVC Architecture</h1>
+    <p>Model View Controller</p>
+    <div ng-controller="myCustomer">
+        <h3>{{customer.name}}</h3>
+        <h3>{{customer.age}}</h3>
+        <h3>{{customer.job}}</h3>
+    </div>
+</body>
+</html>
